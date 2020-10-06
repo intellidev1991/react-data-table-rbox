@@ -1,0 +1,23 @@
+.table-responsive th {
+  border-top: none;
+}
+
+.table-responsive td {
+  border-top: none;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.vl-sortBtn {
+  cursor: pointer;
+}
+
+.page-link {
+  font-size: 14px;
+  font-weight: bold;
+  color: #afafaf;
+}
+
+.table td,
+.table th {
+  vertical-align: middle !important;
+}
