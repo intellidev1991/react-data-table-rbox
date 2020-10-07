@@ -193,7 +193,7 @@ function App() {
 
   return (
     <Container fluid>
-      <Row className="m-3">
+      <Row className="m-4">
         <Col className="text-center">
           <h2>Table Data View</h2>
         </Col>
@@ -249,6 +249,7 @@ function App() {
           {
             display: "Actions",
             isAction: true,
+            popupDirection: "left",
             actionItems: [
               {
                 label: "View",
@@ -285,12 +286,12 @@ function App() {
         onPaginationPreviousClick={() => console.log("previous clicked")}
         onPaginationNextClick={() => console.log("next clicked")}
         noPadding
-        bordered={true}
+        bordered={false}
         borderless={false}
         hover={false}
         striped={true}
         size={TableDataView.tableSize.medium}
-        autoPagination={false}
+        autoPagination={true}
         autoPaginationSize={5}
         menuIcon={<ViewHeadlineIcon color="#cd4747" size={24} />}
         embeddedIconSortUpStyle={{ color: "#cd4747", size: 30 }}

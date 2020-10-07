@@ -21,3 +21,11 @@
 .table th {
   vertical-align: middle !important;
 }
+
+.dropleft .dropdown-toggle::before {
+  content: unset;
+}
+
+.dropdown-toggle::after {
+  content: unset;
+}

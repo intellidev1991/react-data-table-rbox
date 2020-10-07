@@ -1,20 +1,12 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import {
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Container,
-  Row,
-  Col,
-  Table,
-  UncontrolledButtonDropdown,
-} from "reactstrap";
+import "./style/bootstrap.min.css";
 import { slice } from "lodash";
 import { GeneratedPagination } from "./GeneratedPagination";
-import { IconMenuAction } from "./IconMenuAction";
 import { IconSortDown } from "./IconSortDown";
 import { IconSortUp } from "./IconSortUp";
+import Dropdown from "./Dropdown";
+
 import "./style/style.css";
 
 const TableDataView = ({
@@ -25,6 +17,7 @@ const TableDataView = ({
       dataSourceKey, // map to dataSource key
       cellDataFormat, // if present column data will be format. cellDataFormat: ({ data }) => {return data}
       isAction: false, // if true, the column data changed to menu
+      popupDirection: "left", //left , right
       actionItems: [{ label: "a", onClick: (data) => {} }], // action menu items
       isSortable: false,
       onAscendingSortArrowClicked: null,
@@ -166,53 +159,14 @@ const TableDataView = ({
                 item[h_item.dataSourceKey]}
 
               {h_item.isAction && ( // action menu, if isAction was true and actionItems has items
-                <UncontrolledButtonDropdown direction="left">
-                  <DropdownToggle
-                    style={{
-                      backgroundColor: "transparent",
-                      border: "0px",
-                      boxShadow: "none",
-                    }}
-                  >
-                    <IconMenuAction
-                      icon={iconActionMenu}
-                      embeddedIconStyle={embeddedIconMenuActionStyle}
-                    />
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    {h_item.actionItems.map((menu, mi) => {
-                      if (menu.divider) {
-                        return <DropdownItem key={preKey + "m" + mi} divider />;
-                      }
-                      if (!menu.isVisible) {
-                        return (
-                          <DropdownItem
-                            key={preKey + "m" + mi}
-                            onClick={() => menu.onClick(item)}
-                          >
-                            {menu.labelFormat
-                              ? menu.labelFormat(item)
-                              : menu.label}
-                          </DropdownItem>
-                        );
-                      } else {
-                        if (menu.isVisible && menu.isVisible(item)) {
-                          return (
-                            <DropdownItem
-                              key={preKey + "m" + mi}
-                              onClick={() => menu.onClick(item)}
-                            >
-                              {menu.labelFormat
-                                ? menu.labelFormat(item)
-                                : menu.label}
-                            </DropdownItem>
-                          );
-                        } else {
-                        }
-                      }
-                    })}
-                  </DropdownMenu>
-                </UncontrolledButtonDropdown>
+                <Dropdown
+                  iconActionMenu={iconActionMenu}
+                  embeddedIconMenuActionStyle={embeddedIconMenuActionStyle}
+                  h_item={h_item}
+                  preKey={preKey}
+                  item={item}
+                  popupDirection={h_item.popupDirection}
+                />
               )}
             </td>
           );
@@ -237,17 +191,16 @@ const TableDataView = ({
   };
 
   return (
-    <Container fluid={true}>
-      <Row>
-        <Col sm="12" className={`${noPadding ? "" : "p-5 "}`}>
-          <div className="table-responsive" style={{ minHeight: "260px" }}>
-            <Table
-              //responsive
-              striped={striped}
-              bordered={bordered}
-              borderless={borderless}
-              hover={hover}
-              size={size}
+    <div className="container-fluid">
+      <div className="row">
+        <div className={`col ${noPadding ? "" : "p-5 "}`}>
+          <div style={{ minHeight: "260px" }}>
+            <table
+              className={`table${striped ? " table-striped" : ""}${
+                bordered ? " table-bordered" : ""
+              }${borderless ? " table-borderless" : ""}${
+                hover ? " table-hover" : ""
+              }${size && size === "sm" ? " table-sm" : ""}`}
             >
               <thead>
                 <CoreTableHeaders />
@@ -255,12 +208,12 @@ const TableDataView = ({
               <tbody>
                 <TableRowData data={autoPagination ? navigator : dataSource} />
               </tbody>
-            </Table>
+            </table>
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
           <div className="d-flex justify-content-center align-items-center">
             <GeneratedPagination
               onClick={(page_number) => {
@@ -275,9 +228,9 @@ const TableDataView = ({
               resetPagination={autoPagination ? pageNumber : resetPagination}
             />
           </div>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 
