@@ -11,12 +11,6 @@
   cursor: pointer;
 }
 
-.page-link {
-  font-size: 14px;
-  font-weight: bold;
-  color: #afafaf;
-}
-
 .table td,
 .table th {
   vertical-align: middle !important;

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from "react";
-import MenuUpIcon from "mdi-react/MenuUpIcon";
+import MenuUpIcon from "./icon/MenuUpIcon";
 //https://github.com/levrik/mdi-react
 
 const IconSortUp = ({

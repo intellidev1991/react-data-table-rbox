@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from "react";
-import DotsVerticalIcon from "mdi-react/DotsVerticalIcon";
+import DotsVerticalIcon from "./icon/DotsVerticalIcon";
 //https://github.com/levrik/mdi-react
 
 const IconMenuAction = ({ icon, embeddedIconStyle: sty }) => {

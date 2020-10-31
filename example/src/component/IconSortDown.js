@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from "react";
-import MenuDownIcon from "mdi-react/MenuDownIcon";
+import MenuDownIcon from "./icon/MenuDownIcon";
 //https://github.com/levrik/mdi-react
 
 const IconSortDown = ({

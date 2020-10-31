@@ -1,12 +1,11 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import "./style/bootstrap.min.css";
 import { slice } from "lodash";
 import { GeneratedPagination } from "./GeneratedPagination";
 import { IconSortDown } from "./IconSortDown";
 import { IconSortUp } from "./IconSortUp";
 import Dropdown from "./Dropdown";
-
+import "./style/bootstrap.min.css";
 import "./style/style.css";
 
 const TableDataView = ({
@@ -30,6 +29,9 @@ const TableDataView = ({
   onPaginationNumberClick = (pageNumber) => {},
   onPaginationPreviousClick = () => {},
   onPaginationNextClick = () => {},
+  paginationPageLinkStyle = {}, // style object
+  paginationContainerStyle = {}, // style object
+  paginationPosition = "center",
   resetPagination = null,
   paginationNumberOfScreens = 5,
   noPadding = false,
@@ -214,7 +216,9 @@ const TableDataView = ({
       </div>
       <div className="row">
         <div className="col">
-          <div className="d-flex justify-content-center align-items-center">
+          <div
+            className={`d-flex justify-content-${paginationPosition} align-items-center`}
+          >
             <GeneratedPagination
               onClick={(page_number) => {
                 if (autoPagination) {
@@ -226,6 +230,8 @@ const TableDataView = ({
               onPreviousArrow={onPaginationPreviousClick}
               onNextArrow={onPaginationNextClick}
               resetPagination={autoPagination ? pageNumber : resetPagination}
+              paginationPageLinkStyle={paginationPageLinkStyle}
+              paginationContainerStyle={paginationContainerStyle}
             />
           </div>
         </div>

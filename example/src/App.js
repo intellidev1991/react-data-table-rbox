@@ -8,23 +8,6 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
-    // const mock = [
-    //   { id: 1, name: "John", age: 22, gender: "male", enabled: true },
-    //   { id: 2, name: "Russ", age: 52, gender: "male", enabled: true },
-    //   { id: 3, name: "Cicero", age: 18, gender: "male", enabled: false },
-    //   { id: 4, name: "Donny", age: 42, gender: "male", enabled: true },
-    //   { id: 5, name: "Rose", age: 18, gender: "female", enabled: true },
-    //   { id: 6, name: "Amy", age: 16, gender: "female", enabled: false },
-    //   { id: 7, name: "Morgan", age: 55, gender: "male", enabled: false },
-    //   { id: 8, name: "Hortense", age: 75, gender: "male", enabled: false },
-    //   { id: 9, name: "Melissa", age: 33, gender: "female", enabled: true },
-    //   { id: 10, name: "Howard", age: 14, gender: "male", enabled: true },
-    //   { id: 11, name: "John", age: 12, gender: "male", enabled: true },
-    //   { id: 12, name: "Angus", age: 45, gender: "male", enabled: false },
-    //   { id: 13, name: "Elian", age: 41, gender: "female", enabled: true },
-    //   { id: 14, name: "Elliot", age: 32, gender: "male", enabled: false },
-    //   { id: 15, name: "Evie", age: 19, gender: "female", enabled: true },
-    // ];
     const mock = [
       {
         id: 1,
@@ -285,6 +268,9 @@ function App() {
         onPaginationNumberClick={(page_number) => pageUpdated(page_number)}
         onPaginationPreviousClick={() => console.log("previous clicked")}
         onPaginationNextClick={() => console.log("next clicked")}
+        paginationPageLinkStyle={{ color: "#afafaf" }}
+        paginationPageLinkStyle={{ marginTop: "30px" }}
+        paginationPosition="center"
         noPadding
         bordered={false}
         borderless={false}
