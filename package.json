@@ -1,0 +1,45 @@
+{
+  "name": "react-data-table",
+  "version": "1.0.1",
+  "description": "The comprehensive react component to show data in a table include pagination and fully customizable.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "lodash": ">=4.17.11",
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.164",
+    "react": "^17.0.1",
+    "typescript": "^4.0.5"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Hamed Taheri",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intellidev1991/react-data-table.git"
+  },
+  "bugs": {
+    "url": "https://github.com/intellidev1991/react-data-table/issues"
+  },
+  "homepage": "https://github.com/intellidev1991/react-data-table#readme",
+  "keywords": [
+    "react-data-table",
+    "react table",
+    "react",
+    "reactDataTable",
+    "react grid data",
+    "reactTable",
+    "react component",
+    "react data view",
+    "react data viewer"
+  ]
+}

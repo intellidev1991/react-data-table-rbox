@@ -1,0 +1,25 @@
+.table-responsive th {
+  border-top: none;
+}
+
+.table-responsive td {
+  border-top: none;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.vl-sortBtn {
+  cursor: pointer;
+}
+
+.table td,
+.table th {
+  vertical-align: middle !important;
+}
+
+.dropleft .dropdown-toggle::before {
+  content: unset;
+}
+
+.dropdown-toggle::after {
+  content: unset;
+}
