@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TableDataView, sortService } from "./component/index";
-import { Container, Row, Col } from "reactstrap";
+import { TableDataView, sortService } from "react-data-table-rbox";
 import ViewHeadlineIcon from "mdi-react/ViewHeadlineIcon";
 
 function App() {
@@ -175,12 +174,10 @@ function App() {
     setData(sortService.sortDescending(data, sort_field));
 
   return (
-    <Container fluid>
-      <Row className="m-4">
-        <Col className="text-center">
-          <h2>Table Data View</h2>
-        </Col>
-      </Row>
+    <div>
+      <div style={styles.textCenter}>
+        <h2>Table Data View</h2>
+      </div>
 
       <TableDataView
         noDataFoundText="No users found"
@@ -276,7 +273,7 @@ function App() {
         borderless={false}
         hover={false}
         striped={true}
-        size={TableDataView.tableSize.medium}
+        size="md"
         autoPagination={true}
         autoPaginationSize={5}
         menuIcon={<ViewHeadlineIcon color="#cd4747" size={24} />}
@@ -284,8 +281,15 @@ function App() {
         embeddedIconSortDownStyle={{ color: "#cd4747", size: 30 }}
         activeSortIconColor={"blue"}
       />
-    </Container>
+    </div>
   );
 }
 
 export default App;
+
+const styles = {
+  textCenter: {
+    width: "100%",
+    textAlign: "center",
+  },
+};

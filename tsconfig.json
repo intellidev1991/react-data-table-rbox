@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
-    "declaration": true,
+    "lib": ["dom", "dom.iterable", "esnext", "es6"],
+    "module": "esnext",
+    "moduleResolution": "node",
     "outDir": "./lib",
-    "strict": true,
     "jsx": "react",
     "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "strict": true,
     "noImplicitAny": false
   },
   "include": ["src", "src/**/*.tsx?"],

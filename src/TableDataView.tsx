@@ -46,36 +46,39 @@ interface IHeaderItem {
 
 interface IActionItem {
   label: string;
-  onClick: (data: any) => any;
+  labelFormat?: (data: any) => any; // if labelFormat was present, the label will be ignore.
+  onClick?: (data: any) => any;
+  isVisible?: (data: any) => boolean; // just if you want to remove it from menu check isVisible
+  divider?: boolean;
 }
 
 interface ITableDataView {
   noDataFoundText: string;
   headerItems: IHeaderItem[];
   dataSource: any[];
-  onPaginationNumberClick: (pageNumber: number) => any;
-  onPaginationPreviousClick: () => any;
-  onPaginationNextClick: () => any;
-  paginationPageLinkStyle: any; // style object
-  paginationContainerStyle: any; // style object
-  paginationPosition: EnumPaginationDirection;
-  resetPagination: number | null;
-  paginationNumberOfScreens: number;
-  noPadding: boolean;
-  bordered: boolean;
-  borderless: boolean;
-  striped: boolean;
-  hover: boolean;
-  size: EnumSize;
-  autoPagination: boolean;
-  autoPaginationSize: number;
-  iconActionMenu: any;
-  iconSortUp: any;
-  iconSortDown: any;
-  embeddedIconMenuActionStyle: any;
-  embeddedIconSortUpStyle: any;
-  embeddedIconSortDownStyle: any;
-  activeSortIconColor: string; //default sort icon color
+  onPaginationNumberClick?: (pageNumber: number) => any;
+  onPaginationPreviousClick?: () => any;
+  onPaginationNextClick?: () => any;
+  paginationPageLinkStyle?: any; // style object
+  paginationContainerStyle?: any; // style object
+  paginationPosition?: EnumPaginationDirection;
+  resetPagination?: number | null;
+  paginationNumberOfScreens?: number;
+  noPadding?: boolean;
+  bordered?: boolean;
+  borderless?: boolean;
+  striped?: boolean;
+  hover?: boolean;
+  size?: EnumSize;
+  autoPagination?: boolean;
+  autoPaginationSize?: number;
+  iconActionMenu?: any;
+  iconSortUp?: any;
+  iconSortDown?: any;
+  embeddedIconMenuActionStyle?: any;
+  embeddedIconSortUpStyle?: any;
+  embeddedIconSortDownStyle?: any;
+  activeSortIconColor?: string; //default sort icon color
 }
 
 const TableDataView = ({
