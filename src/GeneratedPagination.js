@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { PaginationItem, PaginationLink, Pagination } from "reactstrap";
 import { range } from "lodash";
 import "./style/bootstrap.min.css";
 
@@ -42,40 +41,53 @@ const GeneratedPagination = ({
   };
 
   return (
-    <Pagination
-      aria-label="Page navigation"
-      style={{ ...paginationContainerStyle }}
-    >
-      <PaginationItem key={"pre"}>
-        <PaginationLink
-          previous
-          onClick={onPreviousArrow2}
-          style={{ ...paginationPageLinkStyle }}
-        />
-      </PaginationItem>
-      {range(starter, starter + numberOfScreens).map((counter, index) => {
-        return (
-          <PaginationItem key={counter} active={counter === currentPage}>
-            <PaginationLink
-              style={{ ...paginationPageLinkStyle }}
-              onClick={() => {
-                setCurrentPage(counter);
-                onClick(counter);
-              }}
+    <nav aria-label="Page navigation" style={{ ...paginationContainerStyle }}>
+      <ul class="pagination">
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="#"
+            aria-label="Previous"
+            onClick={onPreviousArrow2}
+            style={{ ...paginationPageLinkStyle }}
+          >
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {range(starter, starter + numberOfScreens).map((counter, index) => {
+          return (
+            <li
+              class="page-item"
+              key={counter}
+              active={counter === currentPage}
             >
-              {counter}
-            </PaginationLink>
-          </PaginationItem>
-        );
-      })}
-      <PaginationItem key={"next"}>
-        <PaginationLink
-          next
-          onClick={onNextArrow2}
-          style={{ ...paginationPageLinkStyle }}
-        />
-      </PaginationItem>
-    </Pagination>
+              <a
+                class="page-link"
+                href="#"
+                style={{ ...paginationPageLinkStyle }}
+                onClick={() => {
+                  setCurrentPage(counter);
+                  onClick(counter);
+                }}
+              >
+                {counter}
+              </a>
+            </li>
+          );
+        })}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="#"
+            aria-label="Next"
+            onClick={onNextArrow2}
+            style={{ ...paginationPageLinkStyle }}
+          >
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

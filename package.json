@@ -1,6 +1,6 @@
 {
   "name": "react-data-table-rbox",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "The comprehensive react component to show data in a table include pagination and fully customizable.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -255,7 +255,7 @@ const TableDataView = ({
     <div className="container-fluid">
       <div className="row">
         <div className={`col ${noPadding ? "" : "p-5 "}`}>
-          <div style={{ minHeight: "260px" }}>
+          <div style={{ minHeight: "0px" }}>
             <table
               className={`table${striped ? " table-striped" : ""}${
                 bordered ? " table-bordered" : ""

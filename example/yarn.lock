@@ -9573,10 +9573,10 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
-react-data-table-rbox@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-data-table-rbox/-/react-data-table-rbox-1.0.5.tgz#95e06e3e7f3b015a9ccc41cfe989fba367ce44a0"
-  integrity sha512-sEtewXAmQibPrwKqfmKD+T0gUDMvbiKacOv6ahzl9HC2DLqznGsDc8Osb6y62Z7FC/klrChKIbgM1NI5VkrH8A==
+react-data-table-rbox@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-data-table-rbox/-/react-data-table-rbox-1.0.6.tgz#6f982e18b08716d2cd1b92ceb996f2e2ad2f0164"
+  integrity sha512-hYm1lB0p4Dmm+cI0uqmVf1FILFo2sBqrdWtiWRLlj6FNNTih1VMMDOkZwsmgmOS0VMDFTdoMIBAqrJYdxpIa8A==
   dependencies:
     lodash "*"
 
