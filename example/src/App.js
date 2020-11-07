@@ -266,7 +266,7 @@ function App() {
         onPaginationPreviousClick={() => console.log("previous clicked")}
         onPaginationNextClick={() => console.log("next clicked")}
         paginationPageLinkStyle={{ color: "#afafaf" }}
-        paginationPageLinkStyle={{ marginTop: "30px" }}
+        paginationContainerStyle={{ marginTop: "0px" }}
         paginationPosition="center"
         noPadding
         bordered={false}
